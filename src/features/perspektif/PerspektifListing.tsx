@@ -18,7 +18,7 @@ const posts = [
     readTime: '4 dk',
     summary: 'Lider iletişimi, marka güveni ve kurumsal itibarın nasıl güçlendirilebileceğine dair düşünceler.',
     href: '/perspektif/ceo-iletisimi',
-    image: '/images/perspective/CEO İLETİŞİMİ.png',
+    image: '/images/perspective/ceo-iletisimi.png',
   },
   {
     title: 'Savunma Sanayi Markaları İçin İletişim Neden Farklıdır?',
@@ -26,7 +26,7 @@ const posts = [
     readTime: '5 dk',
     summary: 'Bu alanda güven, doğruluk ve kriz yönetimi nasıl kurumsal iletişimin merkezine oturur?',
     href: '/perspektif/savunma-sanayi-iletisimi',
-    image: '/images/perspective/SAVUNMA SANAYİ.png',
+    image: '/images/perspective/savunma-sanayi.png',
   },
   {
     title: 'Yapay zekâ iletişim danışmanlığını nasıl dönüştürüyor?',
@@ -34,7 +34,7 @@ const posts = [
     readTime: '6 dk',
     summary: 'AI destekli üretimin iletişim stratejileri ve marka yönetimi üzerindeki etkisi.',
     href: '/perspektif/yapay-zeka-ve-danismanlik',
-    image: '/images/perspective/Ai.png',
+    image: '/images/perspective/yapay-zeka.png',
   },
   {
     title: 'PR Artık Sadece Medyada Görünmek Değil: Yapay Zekâ Görünürlüğünü de Etkiliyor',
