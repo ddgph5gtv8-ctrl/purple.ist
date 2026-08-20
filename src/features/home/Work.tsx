@@ -95,7 +95,7 @@ const projects: ReferenceProject[] = [
     description: 'PR & Lider İletişimi',
     services: ['PR & Medya İletişimi', 'Lider İletişimi'],
     duration: '3 Yıl İş Ortağımız',
-    image: '/images/projects/duguncom/Kanal D Ana hber_düğün.com.PNG',
+    image: '/images/projects/duguncom/duguncom-kanal-d.png',
     href: '/case-studies/duguncom',
     category: 'PR',
     subtypes: ['TV & Video', 'Gazete', 'Dergi', 'Etkinlik & PR'],
