@@ -44,7 +44,7 @@ export default function AIArticlePage() {
 
           <div className="rounded-[2rem] border border-white/10 bg-[#0d0d0d] p-8 sm:p-10">
             <AssetImage
-              src="/images/blog/yapay-zeka.jpg"
+              src="/images/perspective/Ai.png"
               alt="Yapay zekâ blog görseli"
               width={1600}
               height={900}

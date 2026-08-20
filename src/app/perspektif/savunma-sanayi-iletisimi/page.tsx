@@ -44,7 +44,7 @@ export default function DefenseArticlePage() {
 
           <div className="rounded-[2rem] border border-white/10 bg-[#0d0d0d] p-8 sm:p-10">
             <AssetImage
-              src="/images/blog/savunma-sanayii.jpg"
+              src="/images/perspective/SAVUNMA%20SANAYI%CC%87.png"
               alt="Savunma sanayi blog görseli"
               width={1600}
               height={900}
