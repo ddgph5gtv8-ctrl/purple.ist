@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">MATRAŞ placeholder</title>
+  <desc id="desc">Placeholder visual for MATRAŞ case study.</desc>
+  <rect width="1200" height="720" fill="#0b0b0d"/>
+  <rect x="70" y="70" width="1060" height="580" rx="24" fill="#111113" stroke="#313131"/>
+  <text x="600" y="330" text-anchor="middle" fill="#f4f4f5" font-size="68" font-family="Arial, Helvetica, sans-serif" font-weight="700">MATRAŞ</text>
+  <text x="600" y="398" text-anchor="middle" fill="#a1a1aa" font-size="26" font-family="Arial, Helvetica, sans-serif" letter-spacing="6">MARKA İTİBARI &amp; PAZARLAMA İLETİŞİMİ</text>
+</svg>
