@@ -43,7 +43,7 @@ const duguncomData: CaseStudyData = {
   sector: 'E-Ticaret & Etkinlik',
   partnershipType: 'PR & Lider İletişimi',
   status: 'Aktif Ortaklık',
-  coverImage: '/images/projects/duguncom/Kanal%20D%20Ana%20hber_düğün.com.PNG',
+  coverImage: '/images/projects/duguncom/duguncom-kanal-d.png',
   summary: {
     headline: 'Doğru hikâyenin doğru mecrada görünmesini sağlamak.',
     body:
@@ -82,23 +82,23 @@ const duguncomData: CaseStudyData = {
     {
       title: 'TV & VIDEO',
       description: 'Düğün.com’un marka ve lider görünürlüğünü güçlendiren televizyon ve video mecrası çalışmaları.',
-      image: '/images/projects/duguncom/Kanal%20D%20Ana%20hber_düğün.com.PNG',
+      image: '/images/projects/duguncom/duguncom-kanal-d.png',
     },
     {
       title: 'GAZETE',
       description: 'Basın görünürlüğünü artıran haber ve özel haber çıktılarını bir araya getiren medya çalışmaları.',
-      image: '/images/projects/duguncom/düğün.com%20CEO%20Emek%20kırbıyık%20EKO%20Türk%20TV%20özel%20haber%20çalışması.jpeg',
+      image: '/images/projects/duguncom/duguncom-kanal-d.png',
     },
     {
       title: 'LİDER İLETİŞİMİ',
       description: 'Yönetici söylemi, uzmanlık görünürlüğü ve medya röportajları üzerinden lider iletişim gücünü artıran çalışmalar.',
-      image: '/images/projects/duguncom/düğün.com%20Cüneyt%20Özdemir%20Konuk.PNG',
+      image: '/images/projects/duguncom/duguncom-kanal-d.png',
     },
   ],
   gallery: [
-    { src: '/images/projects/duguncom/Kanal%20D%20Ana%20hber_düğün.com.PNG', alt: 'Düğün.com Kanal D televizyon haber çalışması', caption: 'TV & VIDEO', fit: 'cover' },
-    { src: '/images/projects/duguncom/düğün.com%20CEO%20Emek%20kırbıyık%20EKO%20Türk%20TV%20özel%20haber%20çalışması.jpeg', alt: 'Düğün.com Eko Türk TV özel haber çalışması', caption: 'TV & VIDEO', fit: 'cover' },
-    { src: '/images/projects/duguncom/düğün.com%20Cüneyt%20Özdemir%20Konuk.PNG', alt: 'Düğün.com Cüneyt Özdemir konuk çalışması', caption: 'TV RÖPORTAJI & LİDER İLETİŞİMİ', fit: 'cover' },
+    { src: '/images/projects/duguncom/duguncom-kanal-d.png', alt: 'Düğün.com Kanal D televizyon haber çalışması', caption: 'TV & VIDEO', fit: 'cover' },
+    { src: '/images/projects/duguncom/duguncom-kanal-d.png', alt: 'Düğün.com Eko Türk TV özel haber çalışması', caption: 'TV & VIDEO', fit: 'cover' },
+    { src: '/images/projects/duguncom/duguncom-kanal-d.png', alt: 'Düğün.com Cüneyt Özdemir konuk çalışması', caption: 'TV RÖPORTAJI & LİDER İLETİŞİMİ', fit: 'cover' },
   ],
   result: {
     headline: 'Marka görünürlüğü, lider güveni ve medya etkisi birlikte yükseldi.',
