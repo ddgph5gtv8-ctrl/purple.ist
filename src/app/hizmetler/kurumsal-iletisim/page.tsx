@@ -103,7 +103,7 @@ const data: ServicePageData = {
       client: 'DÜĞÜN.COM',
       title: 'Marka görünürlüğünü güçlendiren PR yönetimi',
       href: '#contact',
-      image: '/images/projects/duguncom/Kanal%20D%20Ana%20hber_düğün.com.PNG',
+      image: '/images/projects/duguncom/duguncom-kanal-d.png',
       duration: '3 Yıl İş Ortağımız',
       services: ['Kurumsal PR', 'Basın İletişimi', 'Medya İlişkileri'],
     },

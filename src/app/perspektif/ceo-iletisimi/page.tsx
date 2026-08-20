@@ -44,7 +44,7 @@ export default function CEOArticlePage() {
 
           <div className="rounded-[2rem] border border-white/10 bg-[#0d0d0d] p-8 sm:p-10">
             <AssetImage
-              src="/images/perspective/CEO%20I%CC%87LETI%CC%87S%CC%A7I%CC%87MI%CC%87.png"
+              src="/images/perspective/ceo-iletisimi.png"
               alt="CEO iletişimi blog görseli"
               width={1600}
               height={900}
