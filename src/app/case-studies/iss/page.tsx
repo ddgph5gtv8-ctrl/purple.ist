@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     title: 'ISS - Kurumsal İletişim ve İşveren Markası Yönetimi | Purple',
     description:
       'ISS için PR ve medya ilişkileri, kurumsal iletişim, reklam ve işveren markası çalışmalarını entegre biçimde yönettiğimiz uzun vadeli iş ortaklığı.',
-    images: [{ url: '/images/projects/iss/secret%20cv%20o%CC%88du%CC%88l.png', width: 1200, height: 630, alt: 'ISS işveren markası ilan çalışması' }],
+    images: [{ url: '/images/projects/iss/iss-secretcv-odul.png', width: 1200, height: 630, alt: 'ISS işveren markası ilan çalışması' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'ISS - Kurumsal İletişim ve İşveren Markası Yönetimi | Purple',
     description: 'ISS ile yürüttüğümüz kurumsal iletişim, reklam ve işveren markası çalışmaları.',
-    images: ['/images/projects/iss/secret%20cv%20o%CC%88du%CC%88l.png'],
+    images: ['/images/projects/iss/iss-secretcv-odul.png'],
   },
 };
 
@@ -30,7 +30,7 @@ const caseStudyJsonLd = {
   description: 'ISS ile PR, kurumsal iletişim, reklam, sosyal medya, kreatif tasarım ve işveren markası alanlarında yürüttüğümüz uzun soluklu iletişim ortaklığı.',
   author: { '@type': 'Organization', name: 'PRP İletişim ve Reklam Hiz. Tic. Ltd. Şti.', url: 'https://purple.ist' },
   publisher: { '@type': 'Organization', name: 'Purple', logo: { '@type': 'ImageObject', url: 'https://purple.ist/images/purple-logo.png' } },
-  image: 'https://purple.ist/images/projects/iss/secret%20cv%20o%CC%88du%CC%88l.png',
+  image: 'https://purple.ist/images/projects/iss/iss-secretcv-odul.png',
   url: 'https://purple.ist/case-studies/iss',
 };
 
@@ -43,7 +43,7 @@ const issData: CaseStudyData = {
   sector: 'Tesis Yönetim Hizmetleri',
   partnershipType: 'Uzun Soluklu Kurumsal İletişim Ortaklığı',
   status: 'Aktif İletişim Deneyimi',
-  coverImage: '/images/projects/iss/secret%20cv%20o%CC%88du%CC%88l.png',
+  coverImage: '/images/projects/iss/iss-secretcv-odul.png',
   summary: {
     headline: 'Tek bir hizmet başlığından fazlasını yöneten kurumsal iletişim ortaklığı.',
     body: 'ISS ile yürüttüğümüz çalışma; haşere kontrol ve bitki bakım iletişimiyle sınırlı olmayan, farklı iletişim ihtiyaçlarını tek çatı altında yönettiğimiz uzun vadeli bir kurumsal iletişim iş ortaklığına dönüştü. Marka görünürlüğü, kurumsal söylem, sosyal medya, kreatif içerik ve işveren markası alanlarında tutarlı bir iletişim yapısı kurduk.',
@@ -88,7 +88,7 @@ const issData: CaseStudyData = {
       fit: 'contain',
     },
     {
-      src: '/images/projects/iss/secret%20cv%20o%CC%88du%CC%88l.png',
+      src: '/images/projects/iss/iss-secretcv-odul.png',
       alt: 'ISS için hazırlanan ödüllü iş ilanı görseli',
       caption: 'Ödüllü iş ilanı',
       fit: 'contain',
@@ -112,13 +112,13 @@ const issData: CaseStudyData = {
       fit: 'contain',
     },
     {
-      src: '/images/projects/iss/TKNDERGI%CC%87%5B1%5D.jpeg',
+      src: '/images/projects/iss/iss-tkn-dergi-1.jpeg',
       alt: 'ISS için hazırlanan TKN Dergi çalışması',
       caption: 'TKN Dergi',
       fit: 'contain',
     },
     {
-      src: '/images/projects/iss/su%CC%88rdu%CC%88ru%CC%88lebilirlik%20kapak.png',
+      src: '/images/projects/iss/iss-surdurulebilirlik-kapak.png',
       alt: 'ISS sürdürülebilirlik şirket raporu kapak tasarımı',
       caption: 'Sürdürülebilirlik Şirket Raporu Özeti',
       fit: 'contain',
@@ -129,7 +129,7 @@ const issData: CaseStudyData = {
     subtitle: 'Secretcv HR Summit 2019',
     body: 'ISS Tesis Yönetim Hizmetleri için Purple Creative tarafından hazırlanan ilanlar, En İyi Görselli İş İlanı kategorisinde ödüle layık görüldü.',
     note: 'Ödül, törende Leyla Alaton tarafından ISS\'e takdim edildi.',
-    image: '/images/projects/iss/Secretcv%20O%CC%88du%CC%88l%20To%CC%88ren.jpg',
+    image: '/images/projects/iss/iss-secretcv-odul-toren.jpg',
     imageAlt: 'Secretcv HR Summit 2019 ödül töreninde ISS ödül takdimi',
     caption: 'Secretcv HR Summit 2019 ödül töreni',
   },

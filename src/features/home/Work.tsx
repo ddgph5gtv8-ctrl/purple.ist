@@ -59,7 +59,7 @@ const projects: ReferenceProject[] = [
       'ISS için PR ve medya ilişkileri, kurumsal iletişim, reklam çalışmaları, sosyal medya yönetimi, içerik ve kreatif tasarım, kurumsal yayın materyalleri ile insan kaynakları iletişimi ve işveren markası çalışmalarını entegre biçimde yönettik. ISS Tesis Yönetim Hizmetleri için Purple Creative tarafından hazırlanan ilanlar, Secretcv HR Summit 2019 kapsamında "En İyi Görselli İş İlanı" kategorisinde ödüle layık görüldü; ödül törende Leyla Alaton tarafından ISS\'e takdim edildi.',
     services: ['PR', 'Kurumsal İletişim', 'Reklam', 'Sosyal Medya', 'Kreatif Tasarım', 'İşveren Markası'],
     duration: '10 Yıldır İş Ortağımız',
-    image: '/images/projects/iss/secretcv-odullu-ilan-02.png',
+    image: '/images/projects/iss/iss-secretcv-odul.png',
     href: '/case-studies/iss',
     category: 'PR',
     subtypes: ['TV & Video', 'Gazete', 'Dergi', 'Etkinlik & PR'],
