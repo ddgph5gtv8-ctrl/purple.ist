@@ -101,7 +101,7 @@ const hugluData: CaseStudyData = {
     { src: '/images/projects/huglu/website-home.png', alt: 'Huğlu website ana sayfa tasarımı', caption: 'Kurumsal web sitesi ana sayfa' },
     { src: '/images/projects/huglu/website-products.png', alt: 'Huğlu website ürünler sayfası tasarımı', caption: 'Kurumsal web sitesi ürünler sayfası' },
     { src: '/images/projects/huglu/stand-nurnberg.png', alt: 'Huğlu Nurnberg fuar standı', caption: 'Nurnberg fuar standı' },
-    { src: '/images/projects/huglu/stand saha.png', alt: 'Huğlu İDEF fuar standı', caption: 'İDEF fuar standı' },
+    { src: '/images/projects/huglu/huglu-stand-saha.png', alt: 'Huğlu İDEF fuar standı', caption: 'İDEF fuar standı' },
     { src: '/images/projects/huglu/magazine-ad-01.png', alt: 'Huğlu dergi reklam çalışması bir', caption: 'Dergi reklamı 01' },
     { src: '/images/projects/huglu/magazine-ad-02.png', alt: 'Huğlu dergi reklam çalışması iki', caption: 'Dergi reklamı 02' },
     { src: '/images/projects/huglu/magazine-ad-03.png', alt: 'Huğlu dergi reklam çalışması üç', caption: 'Dergi reklamı 03' },

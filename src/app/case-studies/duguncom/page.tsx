@@ -87,28 +87,28 @@ const duguncomData: CaseStudyData = {
     {
       title: 'TV RÖPORTAJ',
       description: 'Düğün.com CEO’su Emek Kırbıyık’ın Ekotürk TV’de gerçekleştirdiği televizyon röportajı ve marka görünürlüğü çalışması.',
-      image: '/images/projects/duguncom/düğün.com%20CEO%20Emek%20kırbıyık%20EKO%20Türk%20TV%20özel%20haber%20çalışması.jpeg',
+      image: '/images/projects/duguncom/duguncom-eko-turk-tv-ozel-haber.jpeg',
     },
     {
       title: 'LİDER İLETİŞİMİ',
       description: 'Düğün.com CEO’su Emek Kırbıyık’ın, gazeteci ve YouTube yayıncısı Cüneyt Özdemir ile gerçekleştirdiği röportaj üzerinden lider iletişimi ve marka görünürlüğü çalışması.',
-      image: '/images/projects/duguncom/düğün.com%20Cüneyt%20Özdemir%20Konuk.PNG',
+      image: '/images/projects/duguncom/duguncom-cuneyt-ozdemir-konuk.png',
     },
     {
       title: 'POSTA GAZETESİ',
       description: 'Düğün.com’un marka ve yöneticilerinin medya görünürlüğünü güçlendiren gazete ve haber çalışması.',
-      image: '/images/projects/duguncom/duguncom-posta-gazetesi.png',
+      image: '/images/projects/duguncom/duguncom-posta-gazetesi-haber.png',
     },
     {
       title: 'FOX TV RÖPORTAJI',
       description: 'Düğün.com CEO’su Emek Kırbıyık’ın Fox TV ekranlarında yer aldığı televizyon ve medya görünürlüğü çalışması.',
-      image: '/images/projects/duguncom/duguncom-fox-tv-roportaj.png',
+      image: '/images/projects/duguncom/duguncom-fox-tv-ceo-haber.png',
     },
   ],
   gallery: [
     { src: '/images/projects/duguncom/duguncom-kanal-d.png', alt: 'Düğün.com Kanal D televizyon haber çalışması', caption: 'TV & VIDEO', fit: 'cover' },
-    { src: '/images/projects/duguncom/düğün.com%20CEO%20Emek%20kırbıyık%20EKO%20Türk%20TV%20özel%20haber%20çalışması.jpeg', alt: 'Düğün.com Eko Türk TV özel haber çalışması', caption: 'TV & VIDEO', fit: 'cover' },
-    { src: '/images/projects/duguncom/düğün.com%20Cüneyt%20Özdemir%20Konuk.PNG', alt: 'Düğün.com Cüneyt Özdemir konuk çalışması', caption: 'TV RÖPORTAJI & LİDER İLETİŞİMİ', fit: 'cover' },
+    { src: '/images/projects/duguncom/duguncom-eko-turk-tv-ozel-haber.jpeg', alt: 'Düğün.com Eko Türk TV özel haber çalışması', caption: 'TV & VIDEO', fit: 'cover' },
+    { src: '/images/projects/duguncom/duguncom-cuneyt-ozdemir-konuk.png', alt: 'Düğün.com Cüneyt Özdemir konuk çalışması', caption: 'TV RÖPORTAJI & LİDER İLETİŞİMİ', fit: 'cover' },
   ],
   result: {
     headline: 'Marka görünürlüğü, lider güveni ve medya etkisi birlikte yükseldi.',

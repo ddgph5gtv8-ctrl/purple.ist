@@ -107,7 +107,7 @@ const projects: ReferenceProject[] = [
       'The Grand Tarabya için hazırlanan ilan, sosyal medya, poster ve e-posta/newsletter tasarımlarından seçilmiş kreatif çalışmalar.',
     services: ['Marka İletişimi', 'Kreatif Çalışmalar', 'Sosyal Medya', 'Poster', 'Newsletter'],
     duration: 'Kreatif Proje',
-    image: '/images/projects/The%20Grand%20Tarabya/hero.jpg',
+    image: '/images/projects/The%20Grand%20Tarabya/the-grand-tarabya-hero.jpg',
     href: '/case-studies/the-grand-tarabya',
     category: 'Kreatif Üretim',
     subtypes: ['Etkinlik & PR'],

@@ -43,7 +43,7 @@ const grandTarabyaData: CaseStudyData = {
   sector: 'Turizm & Otel',
   partnershipType: 'Marka İletişimi',
   status: 'Kreatif Çalışma',
-  coverImage: '/images/projects/The%20Grand%20Tarabya/hero.jpg',
+  coverImage: '/images/projects/The%20Grand%20Tarabya/the-grand-tarabya-hero.jpg',
   summary: {
     headline: 'Bir otel markasının yaşam tarzı anlatısını yaratmak.',
     body:
@@ -83,25 +83,25 @@ const grandTarabyaData: CaseStudyData = {
     {
       title: 'OUTDOOR REKLAM',
       description: 'Konum, atmosfer ve premium deneyimi öne çıkaran outdoor reklam çalışması.',
-      image: '/images/projects/The%20Grand%20Tarabya/outdoor%20ad.png',
+      image: '/images/projects/The%20Grand%20Tarabya/the-grand-tarabya-outdoor-ad.png',
     },
     {
       title: 'SOSYAL MEDYA',
       description: 'Instagram ve çevrim içi iletişim için kurumsal bir marka görünümü.',
-      image: '/images/projects/The%20Grand%20Tarabya/insta%20post.png',
+      image: '/images/projects/The%20Grand%20Tarabya/the-grand-tarabya-insta-post.png',
     },
     {
       title: 'DÜNYA ÇEVRE GÜNÜ FARKINDALIK GÖRSELİ',
       description: 'Dünya Çevre Günü için hazırlanan sosyal medya postu ve otel içi display alanlarında kullanılan farkındalık görseli.',
-      image: '/images/projects/The%20Grand%20Tarabya/Du%CC%88nya%20C%CC%A7evre%20Gu%CC%88nu%CC%88%20post.png',
+      image: '/images/projects/The%20Grand%20Tarabya/the-grand-tarabya-cevre-gunu-post.png',
     },
   ],
   gallery: [
-    { src: '/images/projects/The%20Grand%20Tarabya/outdoor%20ad.png', alt: 'The Grand Tarabya outdoor reklam tasarımı', caption: 'OUTDOOR REKLAM', fit: 'contain' },
-    { src: '/images/projects/The%20Grand%20Tarabya/insta%20post.png', alt: 'The Grand Tarabya sosyal medya postu', caption: 'SOSYAL MEDYA', fit: 'cover' },
-    { src: '/images/projects/The%20Grand%20Tarabya/Du%CC%88nya%20C%CC%A7evre%20Gu%CC%88nu%CC%88%20post.png', alt: 'The Grand Tarabya Dünya Çevre Günü farkındalık görseli', caption: 'DÜNYA ÇEVRE GÜNÜ', fit: 'cover' },
-    { src: '/images/projects/The%20Grand%20Tarabya/The%20Grand%20Tarabya%20Magazine%20Ads.PNG', alt: 'The Grand Tarabya magazine ad çalışması', caption: 'İLAN / MAGAZİN REKLAMI', fit: 'contain' },
-    { src: '/images/projects/The%20Grand%20Tarabya/mailing.jpg', alt: 'The Grand Tarabya e-posta/newsletter tasarımı', caption: 'NEWSLETTER', fit: 'cover' },
+    { src: '/images/projects/The%20Grand%20Tarabya/the-grand-tarabya-outdoor-ad.png', alt: 'The Grand Tarabya outdoor reklam tasarımı', caption: 'OUTDOOR REKLAM', fit: 'contain' },
+    { src: '/images/projects/The%20Grand%20Tarabya/the-grand-tarabya-insta-post.png', alt: 'The Grand Tarabya sosyal medya postu', caption: 'SOSYAL MEDYA', fit: 'cover' },
+    { src: '/images/projects/The%20Grand%20Tarabya/the-grand-tarabya-cevre-gunu-post.png', alt: 'The Grand Tarabya Dünya Çevre Günü farkındalık görseli', caption: 'DÜNYA ÇEVRE GÜNÜ', fit: 'cover' },
+    { src: '/images/projects/The%20Grand%20Tarabya/the-grand-tarabya-magazine-ads.png', alt: 'The Grand Tarabya magazine ad çalışması', caption: 'İLAN / MAGAZİN REKLAMI', fit: 'contain' },
+    { src: '/images/projects/The%20Grand%20Tarabya/the-grand-tarabya-mailing.jpg', alt: 'The Grand Tarabya e-posta/newsletter tasarımı', caption: 'NEWSLETTER', fit: 'cover' },
   ],
   result: {
     headline: 'Premium yaşam tarzı anlatısı birleştirildi.',

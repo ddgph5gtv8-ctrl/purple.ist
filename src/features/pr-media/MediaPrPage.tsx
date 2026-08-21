@@ -25,7 +25,17 @@ type SectionGroup = {
   items: MediaItem[];
 };
 
-const toAsset = (filename: string) => `/images/media-pr/${encodeURIComponent(filename)}`;
+const toAsset = (filename: string) => {
+  const safeMap: Record<string, string> = {
+    'Fox TV_Düğün.com ceo Haber.PNG': '/images/media-pr/duguncom-fox-tv-ceo-haber.png',
+    'Kanal D Ana hber_düğün.com.PNG': '/images/media-pr/duguncom-kanal-d-haber.png',
+    'düğün.com CEO Emek kırbıyık EKO Türk TV özel haber çalışması.jpeg': '/images/media-pr/duguncom-eko-turk-tv-ozel-haber.jpeg',
+    'düğün.com Cüneyt Özdemir Konuk.PNG': '/images/media-pr/duguncom-cuneyt-ozdemir-konuk.png',
+    'düğün.com Posta Gazetesi Haber.PNG': '/images/media-pr/duguncom-posta-gazetesi-haber.png',
+  };
+
+  return safeMap[filename] ?? `/images/media-pr/${encodeURIComponent(filename)}`;
+};
 
 const sectionGroups: SectionGroup[] = [
   {
