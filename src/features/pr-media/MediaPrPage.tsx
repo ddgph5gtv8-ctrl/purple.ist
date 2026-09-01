@@ -74,7 +74,7 @@ const sectionGroups: SectionGroup[] = [
       { title: 'Fortune Türkiye', organization: 'Fortune Türkiye', src: toAsset('ISS Group CEO Fortune Dergisi Özel Haber.PNG'), alt: 'Fortune ISS Group CEO özel haber', description: 'ISS Group CEO’sunun güçlü liderlik anlatısını güçlendiren dergi haberi.' },
       { title: 'Ekonomist', organization: 'Ekonomist', src: toAsset('ISS CİNSİYETSİZ İŞLER HABER ÇALIŞMASI_EKONOMİST DERGİSİ.jpeg'), alt: 'Ekonomist ISS çalışması', description: 'Kurumsal değerleri ve iş dünyası görünürlüğünü öne çıkaran dergi yansıması.' },
       { title: 'Head Hunter', organization: 'Head Hunter', src: toAsset('Head Hunter_ISS İK Özel Haber Çalışması.jpeg'), alt: 'Head Hunter ISS İK özel haber çalışması', description: 'Reis Kuyumculuk’un marka ve sektör iletişimine dair basın yansıması.' },
-      { title: 'InStyle', organization: 'InStyle', src: `${toAsset('Reis Kuyumculuk Instyle Dergi HABER .PNG')}?v=${Date.now()}`, alt: 'InStyle Reis Kuyumculuk haber çalışması', description: 'Reis Kuyumculuk CEO’su Hakan Gündoğdu ile marka, tasarım ve gelecek üzerine röportaj.' },
+      { title: 'InStyle', organization: 'InStyle', src: toAsset('Reis Kuyumculuk Instyle Dergi HABER .PNG'), alt: 'InStyle Reis Kuyumculuk haber çalışması', description: 'Reis Kuyumculuk CEO’su Hakan Gündoğdu ile marka, tasarım ve gelecek üzerine röportaj.' },
       { title: 'Pazarlama Dergisi', organization: 'Pazarlama Dergisi', src: toAsset('LORİS Lansman Parekende Dergisi Özel Haber.jpeg'), alt: 'Loris lansman Parekende Dergisi özel haber', description: 'Loris Parfüm’ün yeni mağaza yatırımı ve büyüme stratejisine dair haber.' },
       { title: 'Capital', organization: 'Capital', src: toAsset('ISS Türkiye CEO CAVİT HABİB_CAPİTAL DERGİ ÖZEL HABER.jpeg'), alt: 'Capital ISS Türkiye CEO Cavit Habib özel haber', description: 'ISS’in Türkiye liderlik ve kurumsal iletişim anlatısını güçlendiren özel haber.' },
     ],
@@ -105,7 +105,7 @@ export function MediaPrPage() {
       <Section className="pb-20 pt-20 md:pt-24">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <motion.div
-            initial={{ opacity: 0, y: 22 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: 'easeOut' }}
             className="max-w-4xl"
@@ -120,7 +120,7 @@ export function MediaPrPage() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 18 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.08, ease: 'easeOut' }}
             className="mt-14 rounded-[2rem] border border-white/10 bg-[#0b0b0b] p-8 shadow-[0_24px_70px_rgba(0,0,0,0.35)] md:p-10"
@@ -138,7 +138,7 @@ export function MediaPrPage() {
             {sectionGroups.map((group, index) => (
               <motion.section
                 key={group.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={false}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.18 }}
                 transition={{ duration: 0.45, delay: index * 0.06, ease: 'easeOut' }}
@@ -198,7 +198,7 @@ export function MediaPrPage() {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 18 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.45, ease: 'easeOut' }}

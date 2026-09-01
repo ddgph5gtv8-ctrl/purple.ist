@@ -179,7 +179,6 @@ export default function StandDeneyimTasarimiPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
-      <ServicePageTemplate data={data} />
 
       <Section className="border-t border-white/10 bg-[#050505]">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-8">
@@ -224,6 +223,8 @@ export default function StandDeneyimTasarimiPage() {
           </div>
         </div>
       </Section>
+
+      <ServicePageTemplate data={data} />
     </>
   );
 }

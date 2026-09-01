@@ -89,13 +89,18 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="https://linkedin.com/company/purple-ist" target="_blank" rel="noopener noreferrer" className="text-zinc-400 transition-colors hover:text-white">
+                <Link href="https://www.linkedin.com/company/71548333/admin/dashboard/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 transition-colors hover:text-white">
                   LinkedIn
                 </Link>
               </li>
               <li>
-                <Link href="https://instagram.com/purple.ist" target="_blank" rel="noopener noreferrer" className="text-zinc-400 transition-colors hover:text-white">
+                <Link href="https://www.instagram.com/purple.ist1/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 transition-colors hover:text-white">
                   Instagram
+                </Link>
+              </li>
+              <li>
+                <Link href="https://www.youtube.com/@purplecreative1378" target="_blank" rel="noopener noreferrer" className="text-zinc-400 transition-colors hover:text-white">
+                  YouTube
                 </Link>
               </li>
             </ul>
