@@ -127,7 +127,7 @@ const hugluData: CaseStudyData = {
       client: 'ISS',
       title: 'Kurumsal iletişim, reklam ve işveren markası yönetimi',
       href: '/case-studies/iss',
-      image: '/images/projects/iss/secret%20cv%20o%CC%88du%CC%88l.png',
+      image: '/images/projects/iss/iss-secretcv-odul.png',
       duration: '10 Yıldır İş Ortağımız',
       services: ['PR', 'Kurumsal İletişim', 'Reklam', 'Sosyal Medya', 'Kreatif Tasarım', 'İşveren Markası'],
     },
