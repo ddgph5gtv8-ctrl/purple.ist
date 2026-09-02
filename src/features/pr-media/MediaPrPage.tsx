@@ -28,39 +28,88 @@ const normalizeAssetKey = (value: string) =>
   value
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^\p{L}\p{N}]+/gu, ' ')
     .replace(/\s+/g, ' ')
     .trim()
     .toLowerCase();
 
+const actualFiles = [
+  'Capital Dergisi ISS İK Özel Haber.PNG',
+  'Celtic PUB Basın Buluşması Etkinlik.PNG',
+  'düğün.com CEO Emek kırbıyık EKO Türk TV özel haber çalışması.jpeg',
+  'düğün.com Cüneyt Özdemir Konuk.PNG',
+  'düğün.com Posta Gazetesi Haber.PNG',
+  'Fox TV_Düğün.com ceo Haber.PNG',
+  'Head Hunter_ISS İK Özel Haber Çalışması.jpeg',
+  'ISS _ Dünya Gazetesi Özel Haber Çalışması.PNG',
+  'ISS - A Para Özel Haber Çalışması.jpeg',
+  'ISS CİNSİYETSİZ İŞLER HABER ÇALIŞMASI_EKONOMİST DERGİSİ.jpeg',
+  'ISS Group CEO Fortune Dergisi Özel Haber.PNG',
+  'ISS Türkiye Ceo Cavit Habib Özel Haber_Milliyet.jpeg',
+  'ISS Türkiye CEO CAVİT HABİB_CAPİTAL DERGİ ÖZEL HABER.jpeg',
+  'Kanal D Ana hber_düğün.com.PNG',
+  'Loris Lansman Hürriyet.PNG',
+  'LORİS Lansman Parekende Dergisi Özel Haber.jpeg',
+  'Milliyet Gazetesi Loris Lansman Haber.PNG',
+  'Milliyet_ ISS Türkiye CEO Cavit Habib Özel Haber.jpeg',
+  'Reis Kuyumculuk Instyle Dergi HABER .PNG',
+  'UBM Rotaforte TV Yayın.PNG',
+] as const;
+
+const actualAssetMap = new Map<string, string>(
+  actualFiles.map((file) => [normalizeAssetKey(file), file]),
+);
+
+const aliasAssetMap = new Map<string, string>([
+  [normalizeAssetKey('ISS - A Para Özel Haber Çalışması.jpeg'), 'ISS - A Para Özel Haber Çalışması.jpeg'],
+  [normalizeAssetKey('Fox TV_Düğün.com ceo Haber.PNG'), 'Fox TV_Düğün.com ceo Haber.PNG'],
+  [normalizeAssetKey('Kanal D Ana haber_düğün.com.PNG'), 'Kanal D Ana hber_düğün.com.PNG'],
+  [normalizeAssetKey('düğün.com CEO Emek kırbıyık EKO Türk TV özel haber çalışması.jpeg'), 'düğün.com CEO Emek kırbıyık EKO Türk TV özel haber çalışması.jpeg'],
+  [normalizeAssetKey('düğün.com Cüneyt Özdemir Konuk.PNG'), 'düğün.com Cüneyt Özdemir Konuk.PNG'],
+  [normalizeAssetKey('düğün.com Posta Gazetesi Haber.PNG'), 'düğün.com Posta Gazetesi Haber.PNG'],
+  [normalizeAssetKey('Head Hunter_ISS İK Özel Haber Çalışması.jpeg'), 'Head Hunter_ISS İK Özel Haber Çalışması.jpeg'],
+  [normalizeAssetKey('ISS _ Dünya Gazetesi Özel Haber Çalışması.PNG'), 'ISS _ Dünya Gazetesi Özel Haber Çalışması.PNG'],
+  [normalizeAssetKey('ISS CİNSİYETSİZ İŞLER HABER ÇALIŞMASI_EKONOMİST DERGİSİ.jpeg'), 'ISS CİNSİYETSİZ İŞLER HABER ÇALIŞMASI_EKONOMİST DERGİSİ.jpeg'],
+  [normalizeAssetKey('ISS Group CEO Fortune Dergisi Özel Haber.PNG'), 'ISS Group CEO Fortune Dergisi Özel Haber.PNG'],
+  [normalizeAssetKey('ISS Türkiye CEO Cavit Habib Özel Haber_Milliyet.jpeg'), 'ISS Türkiye Ceo Cavit Habib Özel Haber_Milliyet.jpeg'],
+  [normalizeAssetKey('ISS Türkiye CEO CAVİT HABİB_CAPİTAL DERGİ ÖZEL HABER.jpeg'), 'ISS Türkiye CEO CAVİT HABİB_CAPİTAL DERGİ ÖZEL HABER.jpeg'],
+  [normalizeAssetKey('LORİS Lansman Parekende Dergisi Özel Haber.jpeg'), 'LORİS Lansman Parekende Dergisi Özel Haber.jpeg'],
+  [normalizeAssetKey('Milliyet_ ISS Türkiye CEO Cavit Habib Özel Haber.jpeg'), 'Milliyet_ ISS Türkiye CEO Cavit Habib Özel Haber.jpeg'],
+  [normalizeAssetKey('Reis Kuyumculuk Instyle Dergi HABER .PNG'), 'Reis Kuyumculuk Instyle Dergi HABER .PNG'],
+  [normalizeAssetKey('Capital Dergisi ISS İK Özel Haber.PNG'), 'Capital Dergisi ISS İK Özel Haber.PNG'],
+  [normalizeAssetKey('Milliyet Gazetesi Loris Lansman Haber.PNG'), 'Milliyet Gazetesi Loris Lansman Haber.PNG'],
+  [normalizeAssetKey('Loris Lansman Hürriyet.PNG'), 'Loris Lansman Hürriyet.PNG'],
+  [normalizeAssetKey('ISS Türkiye Ceo Cavit Habib Özel Haber_Milliyet.jpeg'), 'ISS Türkiye Ceo Cavit Habib Özel Haber_Milliyet.jpeg'],
+  [normalizeAssetKey('ISS Türkiye CEO CAVIT HABIB_CAPITAL DERGİ ÖZEL HABER.jpeg'), 'ISS Türkiye CEO CAVİT HABİB_CAPİTAL DERGİ ÖZEL HABER.jpeg'],
+  [normalizeAssetKey('Celtic Pub Basın Buluşması Etkinlik.PNG'), 'Celtic PUB Basın Buluşması Etkinlik.PNG'],
+  [normalizeAssetKey('UBM Rotaforte TV Yayın.PNG'), 'UBM Rotaforte TV Yayın.PNG'],
+]);
+
 const toAsset = (filename: string) => {
-  const actualFiles = [
-    'Capital Dergisi ISS İK Özel Haber.PNG',
-    'Celtic PUB Basın Buluşması Etkinlik.PNG',
-    'düğün.com CEO Emek kırbıyık EKO Türk TV özel haber çalışması.jpeg',
-    'düğün.com Cüneyt Özdemir Konuk.PNG',
-    'düğün.com Posta Gazetesi Haber.PNG',
-    'Fox TV_Düğün.com ceo Haber.PNG',
-    'Head Hunter_ISS İK Özel Haber Çalışması.jpeg',
-    'ISS _ Dünya Gazetesi Özel Haber Çalışması.PNG',
-    'ISS - A Para Özel Haber Çalışması.jpeg',
-    'ISS CİNSİYETSİZ İŞLER HABER ÇALIŞMASI_EKONOMİST DERGİSİ.jpeg',
-    'ISS Group CEO Fortune Dergisi Özel Haber.PNG',
-    'ISS Türkiye Ceo Cavit Habib Özel Haber_Milliyet.jpeg',
-    'ISS Türkiye CEO CAVİT HABİB_CAPİTAL DERGİ ÖZEL HABER.jpeg',
-    'Kanal D Ana hber_düğün.com.PNG',
-    'Loris Lansman Hürriyet.PNG',
-    'LORİS Lansman Parekende Dergisi Özel Haber.jpeg',
-    'Milliyet Gazetesi Loris Lansman Haber.PNG',
-    'Milliyet_ ISS Türkiye CEO Cavit Habib Özel Haber.jpeg',
-    'Reis Kuyumculuk Instyle Dergi HABER .PNG',
-    'UBM Rotaforte TV Yayın.PNG',
-  ] as const;
+  const normalizedFilename = normalizeAssetKey(filename);
 
-  const actualAssetMap = new Map<string, string>(
-    actualFiles.map((file) => [normalizeAssetKey(file), file]),
-  );
+  const exactMatch = actualAssetMap.get(normalizedFilename);
+  if (exactMatch) {
+    return `/images/media-pr/${encodeURIComponent(exactMatch)}`;
+  }
 
-  const actualFilename = actualAssetMap.get(normalizeAssetKey(filename)) ?? filename;
+  const aliasMatch = aliasAssetMap.get(normalizedFilename);
+  if (aliasMatch) {
+    return `/images/media-pr/${encodeURIComponent(aliasMatch)}`;
+  }
+
+  const fuzzyMatch = Array.from(actualAssetMap.entries()).find(([lookupKey, realFile]) => {
+    const normalizedLookup = lookupKey
+      .replace(/haber/g, 'hber')
+      .replace(/hber/g, 'haber');
+    const normalizedInput = normalizedFilename
+      .replace(/haber/g, 'hber')
+      .replace(/hber/g, 'haber');
+
+    return normalizedInput === normalizedLookup || normalizedInput.includes(normalizedLookup) || normalizedLookup.includes(normalizedInput);
+  });
+
+  const actualFilename = fuzzyMatch?.[1] ?? filename;
   return `/images/media-pr/${encodeURIComponent(actualFilename)}`;
 };
 
