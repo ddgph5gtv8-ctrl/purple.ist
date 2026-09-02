@@ -46,7 +46,7 @@ const toAsset = (filename: string) => {
     'Head Hunter_ISS İK Özel Haber Çalışması.jpeg': '/images/media-pr/Head Hunter_ISS İK Özel Haber Çalışması.jpeg',
     'Reis Kuyumculuk Instyle Dergi HABER .PNG': '/images/media-pr/Reis Kuyumculuk Instyle Dergi HABER .PNG',
     'LORİS Lansman Parekende Dergisi Özel Haber.jpeg': '/images/media-pr/LORİS Lansman Parekende Dergisi Özel Haber.jpeg',
-    'ISS Türkiye CEO CAVİT HABİB_CAPİTAL DERGİ ÖZEL HABER.jpeg': '/images/media-pr/ISS Türkiye CEO CAVİT HABİB_CAPİTAL DERGİ ÖGİ ÖZEL HABER.jpeg',
+    'ISS Türkiye CEO CAVİT HABİB_CAPİTAL DERGİ ÖZEL HABER.jpeg': '/images/media-pr/ISS Türkiye CEO CAVİT HABİB_CAPİTAL DERGİ ÖZEL HABER.jpeg',
   };
 
   return safeMap[filename] ?? `/images/media-pr/${filename}`;
