@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
@@ -191,21 +190,11 @@ export function MediaPrPage() {
                       className="group block w-full overflow-hidden rounded-[1.4rem] border border-white/10 bg-[#0d0d0d] text-left shadow-[0_14px_44px_rgba(0,0,0,0.22)] transition-all duration-[230ms] hover:-translate-y-0.5 hover:border-white/20 hover:shadow-[0_24px_60px_rgba(0,0,0,0.38)]"
                     >
                       <div className="relative overflow-hidden bg-white">
-                        {item.organization === 'InStyle' ? (
-                          <img
-                            src={item.src}
-                            alt={item.alt}
-                            className="w-full object-contain transition-transform duration-500 group-hover:scale-[1.015]"
-                          />
-                        ) : (
-                          <Image
-                            src={item.src}
-                            alt={item.alt}
-                            width={1200}
-                            height={760}
-                            className="w-full object-contain transition-transform duration-500 group-hover:scale-[1.015]"
-                          />
-                        )}
+                        <img
+                          src={item.src}
+                          alt={item.alt}
+                          className="w-full object-contain transition-transform duration-500 group-hover:scale-[1.015]"
+                        />
                         <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/10 to-transparent" />
                         <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-black/60 to-transparent p-3 text-white">
                           <span className="text-[10px] uppercase tracking-[0.22em] text-white/85">{item.organization}</span>
@@ -267,11 +256,9 @@ export function MediaPrPage() {
             </button>
 
             <div className="bg-[#f7f7f5]">
-              <Image
+              <img
                 src={selected.src}
                 alt={selected.alt}
-                width={1600}
-                height={1000}
                 className="max-h-[82vh] w-full object-contain"
               />
             </div>
