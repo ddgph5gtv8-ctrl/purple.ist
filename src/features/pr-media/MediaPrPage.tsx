@@ -25,31 +25,43 @@ type SectionGroup = {
   items: MediaItem[];
 };
 
-const toAsset = (filename: string) => {
-  const safeMap: Record<string, string> = {
-    'ISS - A Para Özel Haber Çalışması.jpeg': '/images/media-pr/ISS - A Para Özel Haber Çalışması.jpeg',
-    'Fox TV_Düğün.com ceo Haber.PNG': '/images/media-pr/Fox TV_Düğün.com ceo Haber.PNG',
-    'Kanal D Ana hber_düğün.com.PNG': '/images/media-pr/Kanal D Ana hber_düğün.com.PNG',
-    'UBM Rotaforte TV Yayın.PNG': '/images/media-pr/UBM Rotaforte TV Yayın.PNG',
-    'düğün.com CEO Emek kırbıyık EKO Türk TV özel haber çalışması.jpeg': '/images/media-pr/düğün.com CEO Emek kırbıyık EKO Türk TV özel haber çalışması.jpeg',
-    'düğün.com Cüneyt Özdemir Konuk.PNG': '/images/media-pr/düğün.com Cüneyt Özdemir Konuk.PNG',
-    'Celtic PUB Basın Buluşması Etkinlik.PNG': '/images/media-pr/Celtic PUB Basın Buluşması Etkinlik.PNG',
-    'Milliyet_ ISS Türkiye CEO Cavit Habib Özel Haber.jpeg': '/images/media-pr/Milliyet_ ISS Türkiye CEO Cavit Habib Özel Haber.jpeg',
-    'ISS _ Dünya Gazetesi Özel Haber Çalışması.PNG': '/images/media-pr/ISS _ Dünya Gazetesi Özel Haber Çalışması.PNG',
-    'Loris Lansman Hürriyet.PNG': '/images/media-pr/Loris Lansman Hürriyet.PNG',
-    'Milliyet Gazetesi Loris Lansman Haber.PNG': '/images/media-pr/Milliyet Gazetesi Loris Lansman Haber.PNG',
-    'düğün.com Posta Gazetesi Haber.PNG': '/images/media-pr/düğün.com Posta Gazetesi Haber.PNG',
-    'ISS Türkiye Ceo Cavit Habib Özel Haber_Milliyet.jpeg': '/images/media-pr/ISS Türkiye Ceo Cavit Habib Özel Haber_Milliyet.jpeg',
-    'Capital Dergisi ISS İK Özel Haber.PNG': '/images/media-pr/Capital Dergisi ISS İK Özel Haber.PNG',
-    'ISS Group CEO Fortune Dergisi Özel Haber.PNG': '/images/media-pr/ISS Group CEO Fortune Dergisi Özel Haber.PNG',
-    'ISS CİNSİYETSİZ İŞLER HABER ÇALIŞMASI_EKONOMİST DERGİSİ.jpeg': '/images/media-pr/ISS CİNSİYETSİZ İŞLER HABER ÇALIŞMASI_EKONOMİST DERGİSİ.jpeg',
-    'Head Hunter_ISS İK Özel Haber Çalışması.jpeg': '/images/media-pr/Head Hunter_ISS İK Özel Haber Çalışması.jpeg',
-    'Reis Kuyumculuk Instyle Dergi HABER .PNG': '/images/media-pr/Reis Kuyumculuk Instyle Dergi HABER .PNG',
-    'LORİS Lansman Parekende Dergisi Özel Haber.jpeg': '/images/media-pr/LORİS Lansman Parekende Dergisi Özel Haber.jpeg',
-    'ISS Türkiye CEO CAVİT HABİB_CAPİTAL DERGİ ÖZEL HABER.jpeg': '/images/media-pr/ISS Türkiye CEO CAVİT HABİB_CAPİTAL DERGİ ÖZEL HABER.jpeg',
-  };
+const normalizeAssetKey = (value: string) =>
+  value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase();
 
-  return safeMap[filename] ?? `/images/media-pr/${filename}`;
+const toAsset = (filename: string) => {
+  const actualFiles = [
+    'Capital Dergisi ISS İK Özel Haber.PNG',
+    'Celtic PUB Basın Buluşması Etkinlik.PNG',
+    'düğün.com CEO Emek kırbıyık EKO Türk TV özel haber çalışması.jpeg',
+    'düğün.com Cüneyt Özdemir Konuk.PNG',
+    'düğün.com Posta Gazetesi Haber.PNG',
+    'Fox TV_Düğün.com ceo Haber.PNG',
+    'Head Hunter_ISS İK Özel Haber Çalışması.jpeg',
+    'ISS _ Dünya Gazetesi Özel Haber Çalışması.PNG',
+    'ISS - A Para Özel Haber Çalışması.jpeg',
+    'ISS CİNSİYETSİZ İŞLER HABER ÇALIŞMASI_EKONOMİST DERGİSİ.jpeg',
+    'ISS Group CEO Fortune Dergisi Özel Haber.PNG',
+    'ISS Türkiye Ceo Cavit Habib Özel Haber_Milliyet.jpeg',
+    'ISS Türkiye CEO CAVİT HABİB_CAPİTAL DERGİ ÖZEL HABER.jpeg',
+    'Kanal D Ana hber_düğün.com.PNG',
+    'Loris Lansman Hürriyet.PNG',
+    'LORİS Lansman Parekende Dergisi Özel Haber.jpeg',
+    'Milliyet Gazetesi Loris Lansman Haber.PNG',
+    'Milliyet_ ISS Türkiye CEO Cavit Habib Özel Haber.jpeg',
+    'Reis Kuyumculuk Instyle Dergi HABER .PNG',
+    'UBM Rotaforte TV Yayın.PNG',
+  ];
+
+  const actualAssetMap = Object.fromEntries(
+    actualFiles.map((file) => [normalizeAssetKey(file), `/images/media-pr/${file}`]),
+  );
+
+  return actualAssetMap[normalizeAssetKey(filename)] ?? `/images/media-pr/${filename}`;
 };
 
 const sectionGroups: SectionGroup[] = [
