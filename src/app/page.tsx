@@ -31,6 +31,7 @@ import { GrowthPlan } from '@/features/home/GrowthPlan';
 import { Hero } from '@/features/home/Hero';
 import { Process } from '@/features/home/Process';
 import { WorkingModel } from '@/features/home/WorkingModel';
+import { ClientsMarquee } from '@/features/home/ClientsMarquee';
 import { PurpleIQ } from '@/features/home/PurpleIQ';
 import { PurplePerspective } from '@/features/home/PurplePerspective';
 import { Services } from '@/features/home/Services';
@@ -52,6 +53,7 @@ export default function Home() {
       <Work />
       <GrowthPlan />
       <PurplePerspective />
+      <ClientsMarquee />
       <Contact />
       </main>
       <Footer />
