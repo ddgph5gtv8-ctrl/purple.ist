@@ -135,17 +135,9 @@ const hugluData: CaseStudyData = {
       client: 'ARAS KARGO',
       title: 'İç iletişimi dijital deneyime dönüştürdük',
       href: '#contact',
-      image: '/images/projects/huglu/stand-nurnberg.png',
+      image: '/images/projects/aras/hero.jpg',
       duration: '4 Yıldır İş Ortağımız',
       services: ['İç İletişim', 'Dijital Yayın', 'Editoryal İçerik'],
-    },
-    {
-      client: 'TOÇEV',
-      title: 'Sosyal faydayı görünürlüğe dönüştürdük',
-      href: '#contact',
-      image: '/images/projects/huglu/magazine-ad-02.png',
-      duration: '5 Yıl İş Ortağımız',
-      services: ['Kurumsal İletişim', 'PR', 'Basın İletişimi'],
     },
   ],
 };

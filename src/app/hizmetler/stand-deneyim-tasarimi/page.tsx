@@ -94,16 +94,7 @@ const data: ServicePageData = {
       description: 'Her fuar için sıfırdan başlamak yerine, önceki projelerden öğrendiklerimizi yeni projelere aktarıyoruz. Bu, hem kaliteyi artırır hem maliyetleri optimize eder.',
     },
   ],
-  relatedCaseStudies: [
-    {
-      client: 'HUĞLU',
-      title: 'Uçtan uca marka dönüşümü',
-      href: '/case-studies/huglu',
-      image: '/images/projects/huglu/website-home.png',
-      duration: '9 Yıldır İş Ortağımız',
-      services: ['Stand Tasarımı', 'Fuar İletişimi', 'Kreatif Üretim'],
-    },
-  ],
+  relatedCaseStudies: [],
 };
 
 const selectedStandWorks = [
@@ -214,13 +205,56 @@ export default function StandDeneyimTasarimiPage() {
                   </div>
 
                   <div className="p-5">
-                  <p className="text-[10px] uppercase tracking-[0.28em] text-zinc-500">{work.label}</p>
-                  <h3 className="mt-3 text-lg font-semibold tracking-[-0.02em] text-white">{work.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-zinc-400">{work.description}</p>
+                    <p className="text-[10px] uppercase tracking-[0.28em] text-zinc-500">{work.label}</p>
+                    <h3 className="mt-3 text-lg font-semibold tracking-[-0.02em] text-white">{work.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-zinc-400">{work.description}</p>
                   </div>
                 </div>
               );
             })}
+          </div>
+        </div>
+      </Section>
+
+      <Section className="border-t border-white/10 bg-[#050505]">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-8">
+          <div className="max-w-2xl">
+            <Badge variant="primary">HUĞLU</Badge>
+            <Heading as="h2" level="h2" className="mt-5 text-balance">
+              Uçtan uca marka dönüşümü
+            </Heading>
+          </div>
+
+          <div className="mt-8 overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#0d0d0d] shadow-[0_12px_35px_rgba(0,0,0,0.24)]">
+            <div className="grid gap-0 md:grid-cols-[1.4fr_0.9fr]">
+              <div className="relative">
+                <AssetImage
+                  src="/images/projects/huglu/website-home.png"
+                  alt="Huğlu case study"
+                  width={1200}
+                  height={800}
+                  quality={80}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="flex flex-col justify-center p-6 sm:p-8">
+                <p className="text-[10px] uppercase tracking-[0.28em] text-zinc-500">9 Yıldır İş Ortağımız</p>
+                <h3 className="mt-4 text-2xl font-semibold tracking-[-0.03em] text-white">Huğlu</h3>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {['Stand Tasarımı', 'Fuar İletişimi', 'Kreatif Üretim'].map((service) => (
+                    <span key={service} className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[11px] text-zinc-300">
+                      {service}
+                    </span>
+                  ))}
+                </div>
+                <a
+                  href="/case-studies/huglu"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-zinc-300 transition-colors hover:text-white"
+                >
+                  Projeyi İncele
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </Section>

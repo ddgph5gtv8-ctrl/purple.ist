@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Mail, MapPin, Phone, Camera, Share2, ExternalLink, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Mail, MapPin, Phone, Camera, Share2, Play, ExternalLink, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 
 import { Section } from '@/components/shared/Section';
@@ -144,8 +144,9 @@ function ContactInfo() {
       <div className="border-t border-white/10 pt-6">
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">Sosyal Medya</p>
         <div className="mt-4 flex gap-3">
-          <SocialLink href="https://linkedin.com/company/purple-ist" icon={Share2} label="LinkedIn" />
-          <SocialLink href="https://instagram.com/purple.ist" icon={Camera} label="Instagram" />
+          <SocialLink href="https://www.linkedin.com/company/71548333/admin/dashboard/" icon={Share2} label="LinkedIn" />
+          <SocialLink href="https://www.instagram.com/purple.ist1/" icon={Camera} label="Instagram" />
+          <SocialLink href="https://www.youtube.com/@purplecreative1378" icon={Play} label="YouTube" />
         </div>
       </div>
 
