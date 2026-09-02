@@ -55,13 +55,14 @@ const toAsset = (filename: string) => {
     'Milliyet_ ISS Türkiye CEO Cavit Habib Özel Haber.jpeg',
     'Reis Kuyumculuk Instyle Dergi HABER .PNG',
     'UBM Rotaforte TV Yayın.PNG',
-  ];
+  ] as const;
 
-  const actualAssetMap = Object.fromEntries(
-    actualFiles.map((file) => [normalizeAssetKey(file), `/images/media-pr/${file}`]),
+  const actualAssetMap = new Map<string, string>(
+    actualFiles.map((file) => [normalizeAssetKey(file), file]),
   );
 
-  return actualAssetMap[normalizeAssetKey(filename)] ?? `/images/media-pr/${filename}`;
+  const actualFilename = actualAssetMap.get(normalizeAssetKey(filename)) ?? filename;
+  return `/images/media-pr/${encodeURIComponent(actualFilename)}`;
 };
 
 const sectionGroups: SectionGroup[] = [
