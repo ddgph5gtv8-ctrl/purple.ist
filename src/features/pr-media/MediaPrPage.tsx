@@ -24,98 +24,30 @@ type SectionGroup = {
   items: MediaItem[];
 };
 
-const normalizeAssetKey = (value: string) =>
-  value
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^\p{L}\p{N}]+/gu, ' ')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .toLowerCase();
+const realMediaAssets = {
+  aPara: 'ISS - A Para Özel Haber Çalışması.jpeg',
+  foxTv: 'duguncom-fox-tv-ceo-haber.png',
+  kanalD: 'duguncom-kanal-d-haber.png',
+  ubmRotaforte: 'UBM Rotaforte TV Yayın.PNG',
+  ekoTurkTv: 'duguncom-eko-turk-tv-ozel-haber.jpeg',
+  cuneytOzdemir: 'duguncom-cuneyt-ozdemir-konuk.png',
+  celticPress: 'Celtic PUB Basın Buluşması Etkinlik.PNG',
+  milliyetIssCeo: 'Milliyet_ ISS Türkiye CEO Cavit Habib Özel Haber.jpeg',
+  dunyaGazetesi: 'ISS _ Dünya Gazetesi Özel Haber Çalışması.PNG',
+  hurriyet: 'Loris Lansman Hürriyet.PNG',
+  milliyetLoris: 'Milliyet Gazetesi Loris Lansman Haber.PNG',
+  posta: 'duguncom-posta-gazetesi-haber.png',
+  milliyetCeo: 'ISS Türkiye Ceo Cavit Habib Özel Haber_Milliyet.jpeg',
+  capital: 'Capital Dergisi ISS İK Özel Haber.PNG',
+  fortune: 'ISS Group CEO Fortune Dergisi Özel Haber.PNG',
+  ekonomist: 'ISS CİNSİYETSİZ İŞLER HABER ÇALIŞMASI_EKONOMİST DERGİSİ.jpeg',
+  headHunter: 'Head Hunter_ISS İK Özel Haber Çalışması.jpeg',
+  inStyle: 'Reis Kuyumculuk Instyle Dergi HABER .PNG',
+  parekende: 'LORİS Lansman Parekende Dergisi Özel Haber.jpeg',
+  capitalCeo: 'ISS Türkiye CEO CAVİT HABİB_CAPİTAL DERGİ ÖZEL HABER.jpeg',
+} as const;
 
-const actualFiles = [
-  'Capital Dergisi ISS İK Özel Haber.PNG',
-  'Celtic PUB Basın Buluşması Etkinlik.PNG',
-  'düğün.com CEO Emek kırbıyık EKO Türk TV özel haber çalışması.jpeg',
-  'düğün.com Cüneyt Özdemir Konuk.PNG',
-  'düğün.com Posta Gazetesi Haber.PNG',
-  'Fox TV_Düğün.com ceo Haber.PNG',
-  'Head Hunter_ISS İK Özel Haber Çalışması.jpeg',
-  'ISS _ Dünya Gazetesi Özel Haber Çalışması.PNG',
-  'ISS - A Para Özel Haber Çalışması.jpeg',
-  'ISS CİNSİYETSİZ İŞLER HABER ÇALIŞMASI_EKONOMİST DERGİSİ.jpeg',
-  'ISS Group CEO Fortune Dergisi Özel Haber.PNG',
-  'ISS Türkiye Ceo Cavit Habib Özel Haber_Milliyet.jpeg',
-  'ISS Türkiye CEO CAVİT HABİB_CAPİTAL DERGİ ÖZEL HABER.jpeg',
-  'Kanal D Ana hber_düğün.com.PNG',
-  'Loris Lansman Hürriyet.PNG',
-  'LORİS Lansman Parekende Dergisi Özel Haber.jpeg',
-  'Milliyet Gazetesi Loris Lansman Haber.PNG',
-  'Milliyet_ ISS Türkiye CEO Cavit Habib Özel Haber.jpeg',
-  'Reis Kuyumculuk Instyle Dergi HABER .PNG',
-  'UBM Rotaforte TV Yayın.PNG',
-] as const;
-
-const actualAssetMap = new Map<string, string>(
-  actualFiles.map((file) => [normalizeAssetKey(file), file]),
-);
-
-const aliasAssetMap = new Map<string, string>([
-  [normalizeAssetKey('ISS - A Para Özel Haber Çalışması.jpeg'), 'ISS - A Para Özel Haber Çalışması.jpeg'],
-  [normalizeAssetKey('Fox TV_Düğün.com ceo Haber.PNG'), 'Fox TV_Düğün.com ceo Haber.PNG'],
-  [normalizeAssetKey('Kanal D Ana haber_düğün.com.PNG'), 'Kanal D Ana hber_düğün.com.PNG'],
-  [normalizeAssetKey('düğün.com CEO Emek kırbıyık EKO Türk TV özel haber çalışması.jpeg'), 'düğün.com CEO Emek kırbıyık EKO Türk TV özel haber çalışması.jpeg'],
-  [normalizeAssetKey('düğün.com Cüneyt Özdemir Konuk.PNG'), 'düğün.com Cüneyt Özdemir Konuk.PNG'],
-  [normalizeAssetKey('düğün.com Posta Gazetesi Haber.PNG'), 'düğün.com Posta Gazetesi Haber.PNG'],
-  [normalizeAssetKey('Head Hunter_ISS İK Özel Haber Çalışması.jpeg'), 'Head Hunter_ISS İK Özel Haber Çalışması.jpeg'],
-  [normalizeAssetKey('ISS _ Dünya Gazetesi Özel Haber Çalışması.PNG'), 'ISS _ Dünya Gazetesi Özel Haber Çalışması.PNG'],
-  [normalizeAssetKey('ISS CİNSİYETSİZ İŞLER HABER ÇALIŞMASI_EKONOMİST DERGİSİ.jpeg'), 'ISS CİNSİYETSİZ İŞLER HABER ÇALIŞMASI_EKONOMİST DERGİSİ.jpeg'],
-  [normalizeAssetKey('ISS Group CEO Fortune Dergisi Özel Haber.PNG'), 'ISS Group CEO Fortune Dergisi Özel Haber.PNG'],
-  [normalizeAssetKey('ISS Türkiye CEO Cavit Habib Özel Haber_Milliyet.jpeg'), 'ISS Türkiye Ceo Cavit Habib Özel Haber_Milliyet.jpeg'],
-  [normalizeAssetKey('ISS Türkiye CEO CAVİT HABİB_CAPİTAL DERGİ ÖZEL HABER.jpeg'), 'ISS Türkiye CEO CAVİT HABİB_CAPİTAL DERGİ ÖZEL HABER.jpeg'],
-  [normalizeAssetKey('LORİS Lansman Parekende Dergisi Özel Haber.jpeg'), 'LORİS Lansman Parekende Dergisi Özel Haber.jpeg'],
-  [normalizeAssetKey('Milliyet_ ISS Türkiye CEO Cavit Habib Özel Haber.jpeg'), 'Milliyet_ ISS Türkiye CEO Cavit Habib Özel Haber.jpeg'],
-  [normalizeAssetKey('Reis Kuyumculuk Instyle Dergi HABER .PNG'), 'Reis Kuyumculuk Instyle Dergi HABER .PNG'],
-  [normalizeAssetKey('Capital Dergisi ISS İK Özel Haber.PNG'), 'Capital Dergisi ISS İK Özel Haber.PNG'],
-  [normalizeAssetKey('Milliyet Gazetesi Loris Lansman Haber.PNG'), 'Milliyet Gazetesi Loris Lansman Haber.PNG'],
-  [normalizeAssetKey('Loris Lansman Hürriyet.PNG'), 'Loris Lansman Hürriyet.PNG'],
-  [normalizeAssetKey('ISS Türkiye Ceo Cavit Habib Özel Haber_Milliyet.jpeg'), 'ISS Türkiye Ceo Cavit Habib Özel Haber_Milliyet.jpeg'],
-  [normalizeAssetKey('ISS Türkiye CEO CAVIT HABIB_CAPITAL DERGİ ÖZEL HABER.jpeg'), 'ISS Türkiye CEO CAVİT HABİB_CAPİTAL DERGİ ÖZEL HABER.jpeg'],
-  [normalizeAssetKey('Celtic Pub Basın Buluşması Etkinlik.PNG'), 'Celtic PUB Basın Buluşması Etkinlik.PNG'],
-  [normalizeAssetKey('UBM Rotaforte TV Yayın.PNG'), 'UBM Rotaforte TV Yayın.PNG'],
-]);
-
-const toAsset = (filename: string) => {
-  const normalizedFilename = normalizeAssetKey(filename);
-
-  const exactMatch = actualAssetMap.get(normalizedFilename);
-  if (exactMatch) {
-    return `/images/media-pr/${encodeURIComponent(exactMatch)}`;
-  }
-
-  const aliasMatch = aliasAssetMap.get(normalizedFilename);
-  if (aliasMatch) {
-    return `/images/media-pr/${encodeURIComponent(aliasMatch)}`;
-  }
-
-  const fuzzyMatch = Array.from(actualAssetMap.entries()).find(([lookupKey]) => {
-    const normalizedLookup = lookupKey
-      .replace(/haber/g, 'hber')
-      .replace(/hber/g, 'haber');
-    const normalizedInput = normalizedFilename
-      .replace(/haber/g, 'hber')
-      .replace(/hber/g, 'haber');
-
-    return normalizedInput === normalizedLookup || normalizedInput.includes(normalizedLookup) || normalizedLookup.includes(normalizedInput);
-  });
-
-  const actualFilename =
-    fuzzyMatch?.[1] ??
-    actualFiles.find((realFile) => normalizeAssetKey(realFile) === normalizedFilename) ??
-    filename;
-
-  return `/images/media-pr/${encodeURIComponent(actualFilename)}`;
-};
+const toAsset = (filename: string) => `/images/media-pr/${encodeURIComponent(filename)}`;
 
 const sectionGroups: SectionGroup[] = [
   {
@@ -123,13 +55,13 @@ const sectionGroups: SectionGroup[] = [
     title: 'TV & VIDEO',
     description: 'Televizyon programları, röportajlar ve video yayınlarında gerçekleşen medya çalışmaları.',
     items: [
-      { title: 'A Para', organization: 'A Para', src: toAsset('ISS - A Para Özel Haber Çalışması.jpeg'), alt: 'ISS A Para özel haber çalışması', description: 'ISS’in yatırım ve liderlik mesajını güçlendiren özel haber çalışması.' },
-      { title: 'Fox TV', organization: 'Fox TV', src: toAsset('Fox TV_Düğün.com ceo Haber.PNG'), alt: 'Fox TV Düğün.com CEO haber çalışması', description: 'Düğün.com CEO iletişimi ve marka görünürlüğünü öne çıkaran TV röportajı.' },
-      { title: 'Kanal D', organization: 'Kanal D', src: toAsset('Kanal D Ana hber_düğün.com.PNG'), alt: 'Kanal D Düğün.com haber çalışması', description: 'Düğün.com’un marka gücünü ve operasyonel hikâyesini yansıtan televizyon haberi.' },
-      { title: 'UBM Rotaforte', organization: 'UBM Rotaforte', src: toAsset('UBM Rotaforte TV Yayın.PNG'), alt: 'UBM Rotaforte TV yayın çalışması', description: 'Ürün lansmanı ve müşteri deneyimini öne çıkaran TV yayın görünümü.' },
-      { title: 'Eko Türk TV', organization: 'Eko Türk TV', src: toAsset('düğün.com CEO Emek kırbıyık EKO Türk TV özel haber çalışması.jpeg'), alt: 'Düğün.com CEO Eko Türk TV özel haber', description: 'CEO söylemini ve marka değerlerini güçlü biçimde yansıtan özel haber.' },
-      { title: 'Cüneyt Özdemir', organization: 'Düğün.com', src: toAsset('düğün.com Cüneyt Özdemir Konuk.PNG'), alt: 'Düğün.com Cüneyt Özdemir konuk çalışması', description: 'Düğün.com’un marka anlatısını ve lider iletişim gücünü öne çıkaran YouTube haber konukluğu.' },
-      { title: 'Basın Buluşması', organization: 'Celtic Pub', src: toAsset('Celtic PUB Basın Buluşması Etkinlik.PNG'), alt: 'Celtic Pub basın buluşması etkinliği', description: 'Celtic Pub’un etkinlik ve marka deneyimini anlatan basın buluşması çalışması.' },
+      { title: 'A Para', organization: 'A Para', src: toAsset(realMediaAssets.aPara), alt: 'ISS A Para özel haber çalışması', description: 'ISS’in yatırım ve liderlik mesajını güçlendiren özel haber çalışması.' },
+      { title: 'Fox TV', organization: 'Fox TV', src: toAsset(realMediaAssets.foxTv), alt: 'Fox TV Düğün.com CEO haber çalışması', description: 'Düğün.com CEO iletişimi ve marka görünürlüğünü öne çıkaran TV röportajı.' },
+      { title: 'Kanal D', organization: 'Kanal D', src: toAsset(realMediaAssets.kanalD), alt: 'Kanal D Düğün.com haber çalışması', description: 'Düğün.com’un marka gücünü ve operasyonel hikâyesini yansıtan televizyon haberi.' },
+      { title: 'UBM Rotaforte', organization: 'UBM Rotaforte', src: toAsset(realMediaAssets.ubmRotaforte), alt: 'UBM Rotaforte TV yayın çalışması', description: 'Ürün lansmanı ve müşteri deneyimini öne çıkaran TV yayın görünümü.' },
+      { title: 'Eko Türk TV', organization: 'Eko Türk TV', src: toAsset(realMediaAssets.ekoTurkTv), alt: 'Düğün.com CEO Eko Türk TV özel haber', description: 'CEO söylemini ve marka değerlerini güçlü biçimde yansıtan özel haber.' },
+      { title: 'Cüneyt Özdemir', organization: 'Düğün.com', src: toAsset(realMediaAssets.cuneytOzdemir), alt: 'Düğün.com Cüneyt Özdemir konuk çalışması', description: 'Düğün.com’un marka anlatısını ve lider iletişim gücünü öne çıkaran YouTube haber konukluğu.' },
+      { title: 'Basın Buluşması', organization: 'Celtic Pub', src: toAsset(realMediaAssets.celticPress), alt: 'Celtic Pub basın buluşması etkinliği', description: 'Celtic Pub’un etkinlik ve marka deneyimini anlatan basın buluşması çalışması.' },
     ],
   },
   {
@@ -137,12 +69,12 @@ const sectionGroups: SectionGroup[] = [
     title: 'GAZETE',
     description: 'Ulusal ve sektörel basında gerçekleşen haber, röportaj ve özel içerik çalışmaları.',
     items: [
-      { title: 'Milliyet', organization: 'Milliyet', src: toAsset('Milliyet_ ISS Türkiye CEO Cavit Habib Özel Haber.jpeg'), alt: 'Milliyet ISS CEO Cavit Habib özel haber', description: 'ISS’in kurumsal liderlik ve görünürlüğünü güçlendiren özel haber.' },
-      { title: 'Dünya', organization: 'Dünya', src: toAsset('ISS _ Dünya Gazetesi Özel Haber Çalışması.PNG'), alt: 'Dünya Gazetesi ISS özel haber çalışması', description: 'ISS’in kurumsal ve sektör odaklı medya görünürlüğünü artıran haber.' },
-      { title: 'Hürriyet', organization: 'Hürriyet', src: toAsset('Loris Lansman Hürriyet.PNG'), alt: 'Hürriyet Loris lansman haber çalışması', description: 'Loris markasının lansman ve ürün anlatımını güçlendiren basın yansıması.' },
-      { title: 'Milliyet', organization: 'Milliyet', src: toAsset('Milliyet Gazetesi Loris Lansman Haber.PNG'), alt: 'Milliyet Loris Lansman haber çalışması', description: 'Loris lansmanına yönelik basın görünürlüğünü artıran haber çalışması.' },
-      { title: 'Posta', organization: 'Posta', src: toAsset('düğün.com Posta Gazetesi Haber.PNG'), alt: 'Posta Düğün.com haber çalışması', description: 'Düğün.com’un medya görünürlüğünü artıran günlük basın yansısı.' },
-      { title: 'Milliyet', organization: 'Milliyet', src: toAsset('ISS Türkiye Ceo Cavit Habib Özel Haber_Milliyet.jpeg'), alt: 'Milliyet ISS Türkiye CEO Cavit Habib özel haber', description: 'ISS’in Türkiye liderliği ve kurumsal iletişimini öne çıkaran özel haber.' },
+      { title: 'Milliyet', organization: 'Milliyet', src: toAsset(realMediaAssets.milliyetIssCeo), alt: 'Milliyet ISS CEO Cavit Habib özel haber', description: 'ISS’in kurumsal liderlik ve görünürlüğünü güçlendiren özel haber.' },
+      { title: 'Dünya', organization: 'Dünya', src: toAsset(realMediaAssets.dunyaGazetesi), alt: 'Dünya Gazetesi ISS özel haber çalışması', description: 'ISS’in kurumsal ve sektör odaklı medya görünürlüğünü artıran haber.' },
+      { title: 'Hürriyet', organization: 'Hürriyet', src: toAsset(realMediaAssets.hurriyet), alt: 'Hürriyet Loris lansman haber çalışması', description: 'Loris markasının lansman ve ürün anlatımını güçlendiren basın yansıması.' },
+      { title: 'Milliyet', organization: 'Milliyet', src: toAsset(realMediaAssets.milliyetLoris), alt: 'Milliyet Loris Lansman haber çalışması', description: 'Loris lansmanına yönelik basın görünürlüğünü artıran haber çalışması.' },
+      { title: 'Posta', organization: 'Posta', src: toAsset(realMediaAssets.posta), alt: 'Posta Düğün.com haber çalışması', description: 'Düğün.com’un medya görünürlüğünü artıran günlük basın yansısı.' },
+      { title: 'Milliyet', organization: 'Milliyet', src: toAsset(realMediaAssets.milliyetCeo), alt: 'Milliyet ISS Türkiye CEO Cavit Habib özel haber', description: 'ISS’in Türkiye liderliği ve kurumsal iletişimini öne çıkaran özel haber.' },
     ],
   },
   {
@@ -150,13 +82,13 @@ const sectionGroups: SectionGroup[] = [
     title: 'DERGİ',
     description: 'Sektörel ve iş dünyası yayınlarında yer alan röportaj, özel haber ve dosya çalışmaları.',
     items: [
-      { title: 'Capital', organization: 'Capital', src: toAsset('Capital Dergisi ISS İK Özel Haber.PNG'), alt: 'Capital ISS İK özel haber çalışması', description: 'ISS’in insan kaynakları ve kurumsal iletişim anlatımını öne çıkaran özel haber.' },
-      { title: 'Fortune Türkiye', organization: 'Fortune Türkiye', src: toAsset('ISS Group CEO Fortune Dergisi Özel Haber.PNG'), alt: 'Fortune ISS Group CEO özel haber', description: 'ISS Group CEO’sunun güçlü liderlik anlatısını güçlendiren dergi haberi.' },
-      { title: 'Ekonomist', organization: 'Ekonomist', src: toAsset('ISS CİNSİYETSİZ İŞLER HABER ÇALIŞMASI_EKONOMİST DERGİSİ.jpeg'), alt: 'Ekonomist ISS çalışması', description: 'Kurumsal değerleri ve iş dünyası görünürlüğünü öne çıkaran dergi yansıması.' },
-      { title: 'Head Hunter', organization: 'Head Hunter', src: toAsset('Head Hunter_ISS İK Özel Haber Çalışması.jpeg'), alt: 'Head Hunter ISS İK özel haber çalışması', description: 'Reis Kuyumculuk’un marka ve sektör iletişimine dair basın yansıması.' },
-      { title: 'InStyle', organization: 'InStyle', src: toAsset('Reis Kuyumculuk Instyle Dergi HABER .PNG'), alt: 'InStyle Reis Kuyumculuk haber çalışması', description: 'Reis Kuyumculuk CEO’su Hakan Gündoğdu ile marka, tasarım ve gelecek üzerine röportaj.' },
-      { title: 'Pazarlama Dergisi', organization: 'Pazarlama Dergisi', src: toAsset('LORİS Lansman Parekende Dergisi Özel Haber.jpeg'), alt: 'Loris lansman Parekende Dergisi özel haber', description: 'Loris Parfüm’ün yeni mağaza yatırımı ve büyüme stratejisine dair haber.' },
-      { title: 'Capital', organization: 'Capital', src: toAsset('ISS Türkiye CEO CAVİT HABİB_CAPİTAL DERGİ ÖZEL HABER.jpeg'), alt: 'Capital ISS Türkiye CEO Cavit Habib özel haber', description: 'ISS’in Türkiye liderlik ve kurumsal iletişim anlatısını güçlendiren özel haber.' },
+      { title: 'Capital', organization: 'Capital', src: toAsset(realMediaAssets.capital), alt: 'Capital ISS İK özel haber çalışması', description: 'ISS’in insan kaynakları ve kurumsal iletişim anlatımını öne çıkaran özel haber.' },
+      { title: 'Fortune Türkiye', organization: 'Fortune Türkiye', src: toAsset(realMediaAssets.fortune), alt: 'Fortune ISS Group CEO özel haber', description: 'ISS Group CEO’sunun güçlü liderlik anlatısını güçlendiren dergi haberi.' },
+      { title: 'Ekonomist', organization: 'Ekonomist', src: toAsset(realMediaAssets.ekonomist), alt: 'Ekonomist ISS çalışması', description: 'Kurumsal değerleri ve iş dünyası görünürlüğünü öne çıkaran dergi yansıması.' },
+      { title: 'Head Hunter', organization: 'Head Hunter', src: toAsset(realMediaAssets.headHunter), alt: 'Head Hunter ISS İK özel haber çalışması', description: 'Reis Kuyumculuk’un marka ve sektör iletişimine dair basın yansıması.' },
+      { title: 'InStyle', organization: 'InStyle', src: toAsset(realMediaAssets.inStyle), alt: 'InStyle Reis Kuyumculuk haber çalışması', description: 'Reis Kuyumculuk CEO’su Hakan Gündoğdu ile marka, tasarım ve gelecek üzerine röportaj.' },
+      { title: 'Pazarlama Dergisi', organization: 'Pazarlama Dergisi', src: toAsset(realMediaAssets.parekende), alt: 'Loris lansman Parekende Dergisi özel haber', description: 'Loris Parfüm’ün yeni mağaza yatırımı ve büyüme stratejisine dair haber.' },
+      { title: 'Capital', organization: 'Capital', src: toAsset(realMediaAssets.capitalCeo), alt: 'Capital ISS Türkiye CEO Cavit Habib özel haber', description: 'ISS’in Türkiye liderlik ve kurumsal iletişim anlatısını güçlendiren özel haber.' },
     ],
   },
 ];
