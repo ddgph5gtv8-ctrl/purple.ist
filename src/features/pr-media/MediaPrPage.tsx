@@ -98,7 +98,7 @@ const toAsset = (filename: string) => {
     return `/images/media-pr/${encodeURIComponent(aliasMatch)}`;
   }
 
-  const fuzzyMatch = Array.from(actualAssetMap.entries()).find(([lookupKey, realFile]) => {
+  const fuzzyMatch = Array.from(actualAssetMap.entries()).find(([lookupKey]) => {
     const normalizedLookup = lookupKey
       .replace(/haber/g, 'hber')
       .replace(/hber/g, 'haber');
@@ -109,7 +109,11 @@ const toAsset = (filename: string) => {
     return normalizedInput === normalizedLookup || normalizedInput.includes(normalizedLookup) || normalizedLookup.includes(normalizedInput);
   });
 
-  const actualFilename = fuzzyMatch?.[1] ?? filename;
+  const actualFilename =
+    fuzzyMatch?.[1] ??
+    actualFiles.find((realFile) => normalizeAssetKey(realFile) === normalizedFilename) ??
+    filename;
+
   return `/images/media-pr/${encodeURIComponent(actualFilename)}`;
 };
 
