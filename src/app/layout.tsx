@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 
@@ -15,6 +16,8 @@ const manrope = Manrope({
   variable: "--font-manrope",
   display: "swap",
 });
+
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-DVXQQ2PJ02";
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
@@ -91,6 +94,18 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       className={`${inter.variable} ${manrope.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
         {/* Skip link for keyboard / screen reader navigation */}
         <a
           href="#main-content"
