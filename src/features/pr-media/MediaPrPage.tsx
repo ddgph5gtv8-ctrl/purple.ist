@@ -238,11 +238,11 @@ export function MediaPrPage() {
                       onClick={() => setSelected(item)}
                       className="group block w-full overflow-hidden rounded-[1.4rem] border border-white/10 bg-[#0d0d0d] text-left shadow-[0_14px_44px_rgba(0,0,0,0.22)] transition-all duration-[230ms] hover:-translate-y-0.5 hover:border-white/20 hover:shadow-[0_24px_60px_rgba(0,0,0,0.38)]"
                     >
-                      <div className="relative overflow-hidden bg-white">
+                      <div className="relative aspect-[4/3] overflow-hidden bg-white">
                         <img
                           src={item.src}
                           alt={item.alt}
-                          className="w-full object-contain transition-transform duration-500 group-hover:scale-[1.015]"
+                          className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.015]"
                         />
                         <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/10 to-transparent" />
                         <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-black/60 to-transparent p-3 text-white">
