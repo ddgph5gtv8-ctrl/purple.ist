@@ -22,13 +22,37 @@ const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-DVXQQ2
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "PRP İletişim ve Reklam Hiz. Tic. Ltd. Şti.",
+  name: "Purple",
+  legalName: "PRP İletişim ve Reklam Hiz. Tic. Ltd. Şti.",
+  alternateName: ["PRP", "purple.ist"],
   url: "https://purple.ist",
+  logo: "https://purple.ist/images/purple-logo.png",
   telephone: "+90 216 514 24 79",
+  email: "hello@purple.ist",
+  slogan: "Markaların görünürlüğünü değil, etkisini büyütüyoruz.",
+  description:
+    "Purple stratejik iletişim, kurumsal PR, CEO iletişimi, marka stratejisi ve marka deneyimi alanlarında iletişim danışmanlığı sunar.",
+  knowsAbout: [
+    "Stratejik iletişim",
+    "Kurumsal PR",
+    "CEO iletişimi",
+    "Savunma sanayi iletişimi",
+    "Fuar iletişimi",
+    "Marka stratejisi",
+    "Dijital büyüme",
+    "Marka deneyimi",
+  ],
+  areaServed: ["TR", "İstanbul"],
+  sameAs: [
+    "https://www.linkedin.com/company/71548333",
+    "https://www.instagram.com/purple.ist1/",
+    "https://www.youtube.com/@purplecreative1378",
+  ],
   contactPoint: [
     {
       "@type": "ContactPoint",
       telephone: "+90 216 514 24 79",
+      email: "hello@purple.ist",
       contactType: "customer service",
       areaServed: "TR",
       availableLanguage: ["tr"],
@@ -36,19 +60,36 @@ const organizationJsonLd = {
   ],
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Ömerli Mah. Kadirova Cad. Dekar Kıyıbahçe Sitesi No: 36 B Blok Daire 27/B",
     addressLocality: "Çekmeköy",
     addressRegion: "İstanbul",
     postalCode: "34782",
-    streetAddress: "Ömerli Mah. Kadirova Cad. Dekar Kıyıbahçe Sitesi No: 36 B Blok Daire 27/B",
     addressCountry: "TR",
+  },
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Purple",
+  url: "https://purple.ist",
+  description:
+    "Purple stratejik iletişim, kurumsal PR ve marka deneyimi alanlarında iletişim danışmanlığı sunar.",
+  inLanguage: "tr-TR",
+  publisher: {
+    "@type": "Organization",
+    name: "Purple",
+    url: "https://purple.ist",
+    logo: "https://purple.ist/images/purple-logo.png",
   },
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://purple.ist"),
+  applicationName: "Purple",
   title: {
-    default: "PRP İletişim ve Reklam Hiz. Tic. Ltd. Şti. | Stratejik İletişim & PR",
-    template: "%s | PRP İletişim ve Reklam Hiz. Tic. Ltd. Şti.",
+    default: "Purple | Stratejik İletişim & PR Ajansı",
+    template: "%s | Purple",
   },
   description:
     "Purple; stratejik iletişim, kurumsal PR, CEO iletişimi, savunma sanayi iletişimi, fuar iletişimi ve marka deneyimi alanlarında büyüme odaklı iletişim danışmanlığı sunar.",
@@ -64,19 +105,22 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
-    title: "PRP İletişim ve Reklam Hiz. Tic. Ltd. Şti. | Stratejik İletişim & PR",
-    description:
-      "Markaların görünürlüğünü değil, etkisini büyütüyoruz.",
+    title: "Purple | Stratejik İletişim & PR Ajansı",
+    description: "Markaların görünürlüğünü değil, etkisini büyütüyoruz.",
     url: "https://purple.ist",
-    siteName: "PRP İletişim ve Reklam Hiz. Tic. Ltd. Şti.",
+    siteName: "Purple",
     locale: "tr_TR",
     type: "website",
-    images: [{ url: "/images/og-image.png", width: 1200, height: 630, alt: "Purple.ist" }],
+    images: [{ url: "/images/og-image.png", width: 1200, height: 630, alt: "Purple" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "PRP İletişim ve Reklam Hiz. Tic. Ltd. Şti. | Stratejik İletişim & PR",
+    title: "Purple | Stratejik İletişim & PR Ajansı",
     description: "Markaların görünürlüğünü değil, etkisini büyütüyoruz.",
     images: ["/images/og-image.png"],
   },
@@ -116,6 +160,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <MotionProvider>
           {children}
         </MotionProvider>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
       </body>
     </html>
