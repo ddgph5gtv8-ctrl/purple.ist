@@ -25,26 +25,26 @@ type SectionGroup = {
 };
 
 const realMediaAssets = {
-  aPara: 'ISS - A Para Özel Haber Çalışması.jpeg',
+  aPara: 'ISS - A Para Özel Haber Çalışması.jpeg',
   foxTv: 'duguncom-fox-tv-ceo-haber.png',
   kanalD: 'duguncom-kanal-d-haber.png',
   ubmRotaforte: 'UBM Rotaforte TV Yayın.PNG',
   ekoTurkTv: 'duguncom-eko-turk-tv-ozel-haber.jpeg',
   cuneytOzdemir: 'duguncom-cuneyt-ozdemir-konuk.png',
-  celticPress: 'Celtic PUB Basın Buluşması Etkinlik.PNG',
-  milliyetIssCeo: 'Milliyet_ ISS Türkiye CEO Cavit Habib Özel Haber.jpeg',
-  dunyaGazetesi: 'ISS _ Dünya Gazetesi Özel Haber Çalışması.PNG',
-  hurriyet: 'Loris Lansman Hürriyet.PNG',
+  celticPress: 'Celtic PUB Basın Buluşması Etkinlik.PNG',
+  milliyetIssCeo: 'Milliyet_ ISS Türkiye CEO Cavit Habib Özel Haber.jpeg',
+  dunyaGazetesi: 'ISS _ Dünya Gazetesi Özel Haber Çalışması.PNG',
+  hurriyet: 'Loris Lansman Hürriyet.PNG',
   milliyetLoris: 'Milliyet Gazetesi Loris Lansman Haber.PNG',
   posta: 'duguncom-posta-gazetesi-haber.png',
-  milliyetCeo: 'ISS Türkiye Ceo Cavit Habib Özel Haber_Milliyet.jpeg',
-  capital: 'Capital Dergisi ISS İK Özel Haber.PNG',
-  fortune: 'ISS Group CEO Fortune Dergisi Özel Haber.PNG',
-  ekonomist: 'ISS CİNSİYETSİZ İŞLER HABER ÇALIŞMASI_EKONOMİST DERGİSİ.jpeg',
-  headHunter: 'Head Hunter_ISS İK Özel Haber Çalışması.jpeg',
+  milliyetCeo: 'ISS Türkiye Ceo Cavit Habib Özel Haber_Milliyet.jpeg',
+  capital: 'Capital Dergisi ISS İK Özel Haber.PNG',
+  fortune: 'ISS Group CEO Fortune Dergisi Özel Haber.PNG',
+  ekonomist: 'ISS CİNSİYETSİZ İŞLER HABER ÇALIŞMASI_EKONOMİST DERGİSİ.jpeg',
+  headHunter: 'Head Hunter_ISS İK Özel Haber Çalışması.jpeg',
   inStyle: 'Reis Kuyumculuk Instyle Dergi HABER .PNG',
-  parekende: 'LORİS Lansman Parekende Dergisi Özel Haber.jpeg',
-  capitalCeo: 'ISS Türkiye CEO CAVİT HABİB_CAPİTAL DERGİ ÖZEL HABER.jpeg',
+  parekende: 'LORİS Lansman Parekende Dergisi Özel Haber.jpeg',
+  capitalCeo: 'ISS Türkiye CEO CAVİT HABİB_CAPİTAL DERGİ ÖZEL HABER.jpeg',
 } as const;
 
 const toAsset = (filename: string) => `/images/media-pr/${encodeURIComponent(filename)}`;
