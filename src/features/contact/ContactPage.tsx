@@ -218,22 +218,21 @@ function ContactForm() {
     setStatus('submitting');
 
     try {
-      const subject = encodeURIComponent('Görüşme Talebi');
-      const body = encodeURIComponent(
-        [
-          'Ad Soyad: ' + form.name,
-          'Şirket: ' + (form.company || '-'),
-          'E-posta: ' + form.email,
-          'Telefon: ' + (form.phone || '-'),
-          'Görüşme Türü: ' + form.meetingType,
-          'Mesaj: ' + form.message,
-          'Not: Google Meet bağlantısı otomatik oluşturulmayacak; uygun tarih ve saat belirlendikten sonra manuel olarak paylaşılacaktır.',
-        ].join('\n')
-      );
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(data?.error || 'Gönderim başarısız oldu.');
+      }
 
       setStatus('success');
-      await new Promise((r) => setTimeout(r, 250));
-      window.location.href = `mailto:hello@purple.ist?subject=${subject}&body=${body}`;
     } catch {
       setStatus('error');
     }
