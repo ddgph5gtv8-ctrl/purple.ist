@@ -16,7 +16,7 @@ const navItems = [
   { label: 'Uzmanlık Alanlarımız', href: '/#services' },
   { label: 'Büyüme Planı', href: '/#growth-plan' },
   { label: 'Perspektif', href: '/#purple-perspective' },
-  { label: 'İletişim', href: '/#contact' },
+  { label: 'İletişim', href: '/contact' },
 ];
 
 export function Header() {

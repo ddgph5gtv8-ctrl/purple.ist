@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Mail, MapPin, Phone, Camera, Share2, Play, ExternalLink, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
@@ -202,19 +202,28 @@ function ContactForm() {
     message: '',
   });
   const [status, setStatus] = useState<SubmitStatus>('idle');
+  const isSubmittingRef = useRef(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const submitForm = async (event?: React.FormEvent | React.MouseEvent<HTMLButtonElement>) => {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    if (isSubmittingRef.current) {
+      return;
+    }
 
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
       setStatus('error');
       return;
     }
 
+    isSubmittingRef.current = true;
     setStatus('submitting');
 
     try {
@@ -235,7 +244,15 @@ function ContactForm() {
       setStatus('success');
     } catch {
       setStatus('error');
+    } finally {
+      isSubmittingRef.current = false;
     }
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    await submitForm();
   };
 
   return (
@@ -297,6 +314,9 @@ function ContactForm() {
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <button
                 type="submit"
+                onClick={(event) => {
+                  void submitForm(event);
+                }}
                 disabled={status === 'submitting'}
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-medium text-zinc-950 transition-all hover:-translate-y-0.5 hover:bg-zinc-100 disabled:opacity-60"
               >
