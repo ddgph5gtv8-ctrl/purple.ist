@@ -89,7 +89,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="https://www.linkedin.com/company/71548333/admin/dashboard/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 transition-colors hover:text-white">
+                <Link href="https://www.linkedin.com/company/purple.ist__/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 transition-colors hover:text-white">
                   LinkedIn
                 </Link>
               </li>
