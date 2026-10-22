@@ -3,9 +3,9 @@ import type { Metadata } from 'next';
 import { ServicePageTemplate, type ServicePageData } from '@/features/service/ServicePageTemplate';
 
 export const metadata: Metadata = {
-  title: 'Savunma Sanayi İletişimi – B2B ve Uluslararası İletişim Stratejisi',
+ title: 'Savunma Sanayii İletişimi ve PR Ajansı | Purple',
   description:
-    'Savunma sanayi markaları için uluslararası iletişim, fuar yönetimi, B2B büyüme stratejileri ve kurumsal PR. Purple, sektörün güvendiği iletişim danışmanıdır.',
+  'Savunma sanayii şirketleri için stratejik iletişim, kurumsal PR, medya ilişkileri ve uluslararası fuar yönetimi. Purple.ist ile tanışın.',
   alternates: { canonical: '/hizmetler/savunma-sanayi-iletisimi' },
   openGraph: {
     title: 'Savunma Sanayi İletişimi | Purple İletişim',
