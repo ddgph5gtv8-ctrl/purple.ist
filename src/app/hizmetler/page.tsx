@@ -1,9 +1,20 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-
+import type { Metadata } from 'next';
 import { Section } from '@/components/shared/Section';
 import { Badge } from '@/components/ui/badge';
 import { Heading } from '@/components/ui/heading';
+export const metadata: Metadata = {
+  title: 'Hizmetler | PR ve İletişim Ajansı – Purple',
+  description:
+    'Purple; kurumsal PR, marka stratejisi, CEO iletişimi, dijital büyüme, savunma sanayi iletişimi ve fuar deneyimi alanlarında stratejik iletişim hizmetleri sunar.',
+  alternates: {
+    canonical: '/hizmetler',
+  },
+};
+
+
+
 
 const services = [
   {
